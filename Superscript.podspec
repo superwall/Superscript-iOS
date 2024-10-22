@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
-  s.name             = "SuperCEL"
+  s.name             = "Superscript"
   s.version          = "0.1.9"
   s.summary      = "A Common Expression Language evaluator used in SuperwallKit for iOS"
   s.description  = "The iOS package for Superwall's Common Expression Language evaluator built with Rust"
-  s.homepage         = "https://github.com/superwall/SuperCEL-iOS"
+  s.homepage         = "https://github.com/superwall/Superscript-iOS"
   s.license      =  { :type => "MIT", :text => <<-LICENSE
     MIT License
 
@@ -29,11 +29,11 @@ Pod::Spec.new do |s|
       LICENSE
   }
   s.author       = { "Jake Mor" => "jake@superwall.com" }
-  s.source       = { :git => "https://github.com/superwall/SuperCEL-iOS.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/superwall/Superscript-iOS.git", :tag => "#{s.version}" }
   s.ios.deployment_target = "13.0"
 
   s.source_files = "Sources/**/*.{swift}"
-  s.public_header_files = "Sources/SuperCEL/**/*.h"
+  s.public_header_files = "Sources/Superscript/**/*.h"
   s.requires_arc = true
 
   s.vendored_frameworks = "Frameworks/libcel.xcframework"

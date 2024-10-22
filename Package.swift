@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "SuperCEL",
+  name: "Superscript",
   platforms: [
     .iOS(.v13),
     .macOS(.v10_12),
@@ -13,14 +13,14 @@ let package = Package(
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.
     .library(
-      name: "SuperCEL",
-      targets: ["SuperCEL"]),
+      name: "Superscript",
+      targets: ["Superscript"]),
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     .target(
-      name: "SuperCEL",
+      name: "Superscript",
       dependencies: [
         .target(name: "libcel")
       ]
@@ -30,7 +30,7 @@ let package = Package(
       path: "./Frameworks/libcel.xcframework"
     ),
     .testTarget(
-      name: "SuperCELTests",
-      dependencies: ["SuperCEL"]),
+      name: "SuperscriptTests",
+      dependencies: ["Superscript"]),
   ]
 )

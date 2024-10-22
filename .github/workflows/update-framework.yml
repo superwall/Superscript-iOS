@@ -83,12 +83,12 @@ jobs:
 
       - name: Replace Swift File
         run: |
-          rm -rf ios/Sources/SuperCEL/cel.swift
-          mv rust/target/ios/cel.swift ios/Sources/SuperCEL/
+          rm -rf ios/Sources/Superscript/cel.swift
+          mv rust/target/ios/cel.swift ios/Sources/Superscript/
 
       - name: Update Podspec Version
         run: |
-          sed -i '' "s/s.version          = \".*\"/s.version          = \"${{ env.VERSION_NUMBER }}\"/" ios/SuperCEL.podspec
+          sed -i '' "s/s.version          = \".*\"/s.version          = \"${{ env.VERSION_NUMBER }}\"/" ios/Superscript.podspec
 
       - name: Commit and Push Changes
         run: |
@@ -109,7 +109,7 @@ jobs:
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
-          pod trunk push SuperCEL.podspec --allow-warnings
+          pod trunk push Superscript.podspec --allow-warnings
         working-directory: ios
 
       - name: Create GitHub Release

@@ -1,4 +1,4 @@
-# SuperCEL-iOS
+# Superscript-iOS
 
 This is the iOS package for Superwall's Common Expression Language evaluator built with Rust ([view GitHub repo here](https://github.com/superwall/cel-evaluator-rs)).
 
