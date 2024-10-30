@@ -31,10 +31,11 @@ Pod::Spec.new do |s|
   s.author       = { "Jake Mor" => "jake@superwall.com" }
   s.source       = { :git => "https://github.com/superwall/Superscript-iOS.git", :tag => "#{s.version}" }
   s.ios.deployment_target = "13.0"
+  s.swift_versions = ["5.5"]
 
   s.source_files = "Sources/**/*.{swift}"
-  s.public_header_files = "Sources/Superscript/**/*.h"
   s.requires_arc = true
+  s.static_framework = false
 
   s.vendored_frameworks = "Frameworks/libcel.xcframework"
 end
