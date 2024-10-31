@@ -1,0 +1,4 @@
+module celFFI {
+    header "celFFI.h"
+    export *
+}
