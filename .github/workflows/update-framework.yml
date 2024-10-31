@@ -69,7 +69,6 @@ jobs:
           fi
           source $HOME/.cargo/env
           rustup toolchain install nightly
-          rustup target add aarch64-apple-visionos --toolchain nightly
           rustup component add rust-src --toolchain nightly
 
         shell: bash
