@@ -68,6 +68,10 @@ jobs:
             curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
           fi
           source $HOME/.cargo/env
+          rustup toolchain install nightly
+          rustup target add aarch64-apple-visionos --toolchain nightly
+          rustup component add rust-src --toolchain nightly
+
         shell: bash
 
       - name: Build iOS Framework
