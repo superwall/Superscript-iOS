@@ -35,7 +35,6 @@ Pod::Spec.new do |s|
 
   s.source_files = "Sources/**/*.{swift}"
   s.requires_arc = true
-  s.static_framework = true
 
   s.vendored_frameworks = "Frameworks/libcel.xcframework"
 end
