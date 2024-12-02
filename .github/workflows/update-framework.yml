@@ -17,7 +17,7 @@ jobs:
       - name: Checkout CEL Rust Repository
         uses: actions/checkout@v4
         with:
-          repository: superwall/cel-evaluator-rs
+          repository: superwall/superscript
           token: ${{ secrets.GITHUB_TOKEN }}
           path: rust
 
@@ -122,6 +122,6 @@ jobs:
         with:
           tag_name: ${{ env.VERSION_NUMBER }}
           release_name: ${{ env.VERSION_NUMBER }}
-          body: "This is an automatically generated release. Please see the [original Rust release](https://github.com/superwall/cel-evaluator-rs/releases/tag/${{ env.VERSION_NUMBER }}) for any version changes."
+          body: "This is an automatically generated release. Please see the [original Rust release](https://github.com/superwall/superscript/releases/tag/${{ env.VERSION_NUMBER }}) for any version changes."
           draft: false
           prerelease: false
