@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Superscript"
-  s.version          = "0.2.2"
+  s.version          = "0.2.3"
   s.summary      = "A Common Expression Language evaluator used in SuperwallKit for iOS"
   s.description  = "The iOS package for Superwall's Common Expression Language evaluator built with Rust"
   s.homepage         = "https://github.com/superwall/Superscript-iOS"
