@@ -253,13 +253,22 @@ typedef void (*UniffiForeignFutureCompleteVoid)(uint64_t, UniffiForeignFutureStr
 #endif
 #ifndef UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD0
 #define UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD0
-typedef void (*UniffiCallbackInterfaceHostContextMethod0)(uint64_t, RustBuffer, RustBuffer, UniffiForeignFutureCompleteRustBuffer _Nonnull, uint64_t, UniffiForeignFuture* _Nonnull
+typedef void (*UniffiCallbackInterfaceHostContextMethod0)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, RustBuffer* _Nonnull, 
+        RustCallStatus *_Nonnull uniffiCallStatus
     );
 
 #endif
 #ifndef UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD1
 #define UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD1
-typedef void (*UniffiCallbackInterfaceHostContextMethod1)(uint64_t, RustBuffer, RustBuffer, UniffiForeignFutureCompleteRustBuffer _Nonnull, uint64_t, UniffiForeignFuture* _Nonnull
+typedef void (*UniffiCallbackInterfaceHostContextMethod1)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, RustBuffer* _Nonnull, 
+        RustCallStatus *_Nonnull uniffiCallStatus
+    );
+
+#endif
+#ifndef UNIFFI_FFIDEF_CALLBACK_INTERFACE_RESULT_CALLBACK_METHOD0
+#define UNIFFI_FFIDEF_CALLBACK_INTERFACE_RESULT_CALLBACK_METHOD0
+typedef void (*UniffiCallbackInterfaceResultCallbackMethod0)(uint64_t, RustBuffer, void* _Nonnull, 
+        RustCallStatus *_Nonnull uniffiCallStatus
     );
 
 #endif
@@ -270,6 +279,14 @@ typedef struct UniffiVTableCallbackInterfaceHostContext {
     UniffiCallbackInterfaceHostContextMethod1 _Nonnull deviceProperty;
     UniffiCallbackInterfaceFree _Nonnull uniffiFree;
 } UniffiVTableCallbackInterfaceHostContext;
+
+#endif
+#ifndef UNIFFI_FFIDEF_V_TABLE_CALLBACK_INTERFACE_RESULT_CALLBACK
+#define UNIFFI_FFIDEF_V_TABLE_CALLBACK_INTERFACE_RESULT_CALLBACK
+typedef struct UniffiVTableCallbackInterfaceResultCallback {
+    UniffiCallbackInterfaceResultCallbackMethod0 _Nonnull onResult;
+    UniffiCallbackInterfaceFree _Nonnull uniffiFree;
+} UniffiVTableCallbackInterfaceResultCallback;
 
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_CLONE_HOSTCONTEXT
@@ -284,17 +301,32 @@ void uniffi_cel_eval_fn_free_hostcontext(void*_Nonnull ptr, RustCallStatus *_Non
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_INIT_CALLBACK_VTABLE_HOSTCONTEXT
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_INIT_CALLBACK_VTABLE_HOSTCONTEXT
-void uniffi_cel_eval_fn_init_callback_vtable_hostcontext(UniffiVTableCallbackInterfaceHostContext* _Nonnull vtable
+void uniffi_cel_eval_fn_init_callback_vtable_hostcontext(const UniffiVTableCallbackInterfaceHostContext* _Nonnull vtable
 );
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_COMPUTED_PROPERTY
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_COMPUTED_PROPERTY
-uint64_t uniffi_cel_eval_fn_method_hostcontext_computed_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args
+RustBuffer uniffi_cel_eval_fn_method_hostcontext_computed_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
 );
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
-uint64_t uniffi_cel_eval_fn_method_hostcontext_device_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args
+RustBuffer uniffi_cel_eval_fn_method_hostcontext_device_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_CLONE_RESULTCALLBACK
+#define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_CLONE_RESULTCALLBACK
+void*_Nonnull uniffi_cel_eval_fn_clone_resultcallback(void*_Nonnull ptr, RustCallStatus *_Nonnull out_status
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_FREE_RESULTCALLBACK
+#define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_FREE_RESULTCALLBACK
+void uniffi_cel_eval_fn_free_resultcallback(void*_Nonnull ptr, RustCallStatus *_Nonnull out_status
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_RESULTCALLBACK_ON_RESULT
+#define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_RESULTCALLBACK_ON_RESULT
+void uniffi_cel_eval_fn_method_resultcallback_on_result(void*_Nonnull ptr, RustBuffer result, RustCallStatus *_Nonnull out_status
 );
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_FUNC_EVALUATE_AST
@@ -630,6 +662,12 @@ uint16_t uniffi_cel_eval_checksum_method_hostcontext_computed_property(void
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_CHECKSUM_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_CHECKSUM_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
 uint16_t uniffi_cel_eval_checksum_method_hostcontext_device_property(void
+    
+);
+#endif
+#ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_CHECKSUM_METHOD_RESULTCALLBACK_ON_RESULT
+#define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_CHECKSUM_METHOD_RESULTCALLBACK_ON_RESULT
+uint16_t uniffi_cel_eval_checksum_method_resultcallback_on_result(void
     
 );
 #endif
