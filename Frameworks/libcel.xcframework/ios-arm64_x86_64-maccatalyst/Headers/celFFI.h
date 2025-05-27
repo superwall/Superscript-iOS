@@ -253,14 +253,14 @@ typedef void (*UniffiForeignFutureCompleteVoid)(uint64_t, UniffiForeignFutureStr
 #endif
 #ifndef UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD0
 #define UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD0
-typedef void (*UniffiCallbackInterfaceHostContextMethod0)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, RustBuffer* _Nonnull, 
+typedef void (*UniffiCallbackInterfaceHostContextMethod0)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, void* _Nonnull, 
         RustCallStatus *_Nonnull uniffiCallStatus
     );
 
 #endif
 #ifndef UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD1
 #define UNIFFI_FFIDEF_CALLBACK_INTERFACE_HOST_CONTEXT_METHOD1
-typedef void (*UniffiCallbackInterfaceHostContextMethod1)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, RustBuffer* _Nonnull, 
+typedef void (*UniffiCallbackInterfaceHostContextMethod1)(uint64_t, RustBuffer, RustBuffer, void*_Nonnull, void* _Nonnull, 
         RustCallStatus *_Nonnull uniffiCallStatus
     );
 
@@ -306,12 +306,12 @@ void uniffi_cel_eval_fn_init_callback_vtable_hostcontext(const UniffiVTableCallb
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_COMPUTED_PROPERTY
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_COMPUTED_PROPERTY
-RustBuffer uniffi_cel_eval_fn_method_hostcontext_computed_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
+void uniffi_cel_eval_fn_method_hostcontext_computed_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
 );
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
 #define UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_METHOD_HOSTCONTEXT_DEVICE_PROPERTY
-RustBuffer uniffi_cel_eval_fn_method_hostcontext_device_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
+void uniffi_cel_eval_fn_method_hostcontext_device_property(void*_Nonnull ptr, RustBuffer name, RustBuffer args, void*_Nonnull callback, RustCallStatus *_Nonnull out_status
 );
 #endif
 #ifndef UNIFFI_FFIDEF_UNIFFI_CEL_EVAL_FN_CLONE_RESULTCALLBACK

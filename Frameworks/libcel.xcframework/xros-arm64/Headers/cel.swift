@@ -449,9 +449,9 @@ fileprivate struct FfiConverterString: FfiConverter {
 
 public protocol HostContext: AnyObject, Sendable {
     
-    func computedProperty(name: String, args: String, callback: ResultCallback)  -> String
+    func computedProperty(name: String, args: String, callback: ResultCallback) 
     
-    func deviceProperty(name: String, args: String, callback: ResultCallback)  -> String
+    func deviceProperty(name: String, args: String, callback: ResultCallback) 
     
 }
 open class HostContextImpl: HostContext, @unchecked Sendable {
@@ -506,24 +506,22 @@ open class HostContextImpl: HostContext, @unchecked Sendable {
     
 
     
-open func computedProperty(name: String, args: String, callback: ResultCallback) -> String  {
-    return try!  FfiConverterString.lift(try! rustCall() {
+open func computedProperty(name: String, args: String, callback: ResultCallback)  {try! rustCall() {
     uniffi_cel_eval_fn_method_hostcontext_computed_property(self.uniffiClonePointer(),
         FfiConverterString.lower(name),
         FfiConverterString.lower(args),
         FfiConverterTypeResultCallback_lower(callback),$0
     )
-})
+}
 }
     
-open func deviceProperty(name: String, args: String, callback: ResultCallback) -> String  {
-    return try!  FfiConverterString.lift(try! rustCall() {
+open func deviceProperty(name: String, args: String, callback: ResultCallback)  {try! rustCall() {
     uniffi_cel_eval_fn_method_hostcontext_device_property(self.uniffiClonePointer(),
         FfiConverterString.lower(name),
         FfiConverterString.lower(args),
         FfiConverterTypeResultCallback_lower(callback),$0
     )
-})
+}
 }
     
 
@@ -544,11 +542,11 @@ fileprivate struct UniffiCallbackInterfaceHostContext {
             name: RustBuffer,
             args: RustBuffer,
             callback: UnsafeMutableRawPointer,
-            uniffiOutReturn: UnsafeMutablePointer<RustBuffer>,
+            uniffiOutReturn: UnsafeMutableRawPointer,
             uniffiCallStatus: UnsafeMutablePointer<RustCallStatus>
         ) in
             let makeCall = {
-                () throws -> String in
+                () throws -> () in
                 guard let uniffiObj = try? FfiConverterTypeHostContext.handleMap.get(handle: uniffiHandle) else {
                     throw UniffiInternalError.unexpectedStaleHandle
                 }
@@ -560,7 +558,7 @@ fileprivate struct UniffiCallbackInterfaceHostContext {
             }
 
             
-            let writeReturn = { uniffiOutReturn.pointee = FfiConverterString.lower($0) }
+            let writeReturn = { () }
             uniffiTraitInterfaceCall(
                 callStatus: uniffiCallStatus,
                 makeCall: makeCall,
@@ -572,11 +570,11 @@ fileprivate struct UniffiCallbackInterfaceHostContext {
             name: RustBuffer,
             args: RustBuffer,
             callback: UnsafeMutableRawPointer,
-            uniffiOutReturn: UnsafeMutablePointer<RustBuffer>,
+            uniffiOutReturn: UnsafeMutableRawPointer,
             uniffiCallStatus: UnsafeMutablePointer<RustCallStatus>
         ) in
             let makeCall = {
-                () throws -> String in
+                () throws -> () in
                 guard let uniffiObj = try? FfiConverterTypeHostContext.handleMap.get(handle: uniffiHandle) else {
                     throw UniffiInternalError.unexpectedStaleHandle
                 }
@@ -588,7 +586,7 @@ fileprivate struct UniffiCallbackInterfaceHostContext {
             }
 
             
-            let writeReturn = { uniffiOutReturn.pointee = FfiConverterString.lower($0) }
+            let writeReturn = { () }
             uniffiTraitInterfaceCall(
                 callStatus: uniffiCallStatus,
                 makeCall: makeCall,
@@ -843,10 +841,10 @@ private let initializationResult: InitializationResult = {
     if (uniffi_cel_eval_checksum_func_parse_to_ast() != 40465) {
         return InitializationResult.apiChecksumMismatch
     }
-    if (uniffi_cel_eval_checksum_method_hostcontext_computed_property() != 48485) {
+    if (uniffi_cel_eval_checksum_method_hostcontext_computed_property() != 5366) {
         return InitializationResult.apiChecksumMismatch
     }
-    if (uniffi_cel_eval_checksum_method_hostcontext_device_property() != 53978) {
+    if (uniffi_cel_eval_checksum_method_hostcontext_device_property() != 7074) {
         return InitializationResult.apiChecksumMismatch
     }
     if (uniffi_cel_eval_checksum_method_resultcallback_on_result() != 27954) {
