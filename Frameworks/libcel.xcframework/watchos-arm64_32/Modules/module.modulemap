@@ -1,5 +1,5 @@
 module celFFI {
-    header "../Headers/celFFI.h"
+    header "../Headers/celFFI/celFFI.h"
     export *
     use "Darwin"
     use "_Builtin_stdbool"
