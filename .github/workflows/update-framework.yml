@@ -96,10 +96,21 @@ jobs:
       - name: Commit and Push Changes
         run: |
           cd ios
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          # Make sure we have the latest remote main and tags
+          git fetch origin main --tags
+
+          # Rebase our local changes onto the latest remote main
+          git pull --rebase --autostash origin main
+
           git add .
-          git commit -m "Update framework"
+          git commit -m "Update framework" || echo "No changes to commit"
+
+          # Safety: remote main may have advanced again between commit and push
+          git pull --rebase --autostash origin main
+
           git push origin main
 
       - name: Tag the New Version
