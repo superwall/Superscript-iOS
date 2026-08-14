@@ -10,41 +10,6 @@
 			<key>HeadersPath</key>
 			<string>Headers</string>
 			<key>LibraryIdentifier</key>
-			<string>watchos-arm64_32</string>
-			<key>LibraryPath</key>
-			<string>libcel.a</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64_32</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>watchos</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>libcel.a</string>
-			<key>HeadersPath</key>
-			<string>Headers</string>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64_x86_64-maccatalyst</string>
-			<key>LibraryPath</key>
-			<string>libcel.a</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>maccatalyst</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>libcel.a</string>
-			<key>HeadersPath</key>
-			<string>Headers</string>
-			<key>LibraryIdentifier</key>
 			<string>ios-arm64_x86_64-simulator</string>
 			<key>LibraryPath</key>
 			<string>libcel.a</string>
@@ -81,6 +46,22 @@
 			<key>HeadersPath</key>
 			<string>Headers</string>
 			<key>LibraryIdentifier</key>
+			<string>watchos-arm64_32</string>
+			<key>LibraryPath</key>
+			<string>libcel.a</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64_32</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>watchos</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>libcel.a</string>
+			<key>HeadersPath</key>
+			<string>Headers</string>
+			<key>LibraryIdentifier</key>
 			<string>watchos-arm64_x86_64-simulator</string>
 			<key>LibraryPath</key>
 			<string>libcel.a</string>
@@ -93,22 +74,6 @@
 			<string>watchos</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>libcel.a</string>
-			<key>HeadersPath</key>
-			<string>Headers</string>
-			<key>LibraryIdentifier</key>
-			<string>xros-arm64</string>
-			<key>LibraryPath</key>
-			<string>libcel.a</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>xros</string>
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
@@ -143,6 +108,41 @@
 			<string>xros</string>
 			<key>SupportedPlatformVariant</key>
 			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>libcel.a</string>
+			<key>HeadersPath</key>
+			<string>Headers</string>
+			<key>LibraryIdentifier</key>
+			<string>xros-arm64</string>
+			<key>LibraryPath</key>
+			<string>libcel.a</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>xros</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>libcel.a</string>
+			<key>HeadersPath</key>
+			<string>Headers</string>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64_x86_64-maccatalyst</string>
+			<key>LibraryPath</key>
+			<string>libcel.a</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+				<string>x86_64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>maccatalyst</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>
