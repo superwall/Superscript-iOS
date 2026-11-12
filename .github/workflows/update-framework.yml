@@ -4,18 +4,21 @@ on:
   repository_dispatch:
     types: [update-build]
 
+permissions:
+  contents: write
+
 jobs:
   update_framework:
     runs-on: macos-latest
 
     steps:
       - name: Checkout CEL iOS Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           path: ios
 
       - name: Checkout CEL Rust Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: superwall/superscript
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,7 +42,7 @@ jobs:
           fi
 
       - name: Cache Rust toolchain
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: |
             ~/.cargo
@@ -47,7 +50,7 @@ jobs:
           key: ${{ runner.os }}-rust-toolchain-${{ hashFiles('**/rust-toolchain') }}
 
       - name: Cache Cargo registry
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: |
             ~/.cargo/registry
@@ -55,7 +58,7 @@ jobs:
           key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Cache Cargo build
-        uses: actions/cache@v3
+        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3
         with:
           path: rust/target
           key: ${{ runner.os }}-cargo-build-${{ hashFiles('**/Cargo.lock') }}
@@ -127,7 +130,7 @@ jobs:
         working-directory: ios
 
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
